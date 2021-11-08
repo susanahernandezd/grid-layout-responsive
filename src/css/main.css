@@ -1,0 +1,116 @@
+*, *:after, *:before { 
+  box-sizing: border-box; 
+}
+
+body {
+  background: #f0f0f0;
+  font-family: 'Raleway', Arial, Helvetica, sans-serif;
+}
+
+.grid {
+	display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr));
+  grid-auto-flow: row dense;
+}
+
+figure {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  max-height: 22.5rem;
+  width: 100%;
+  background: #3085a3;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  
+  img {
+    position: relative;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    opacity: 0.8;
+    transition: opacity 0.35s, transform 0.35s;
+    transform: scale(1.12);
+  }
+  
+  figcaption {
+    padding: 3em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &::before,
+    &::after {
+      pointer-events: none;
+    }
+
+    &::before {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      bottom: 30px;
+      left: 30px;
+      border: 1px solid #fff;
+      content: '';
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+
+  }
+  
+  h2 {
+    margin: 1rem 0;
+    word-spacing: -0.15em;
+    font-weight: 300;
+
+    span {
+      font-weight: 800;
+    }
+  }
+  
+  p {
+    margin: 0 auto;
+    max-width: 200px;
+    transform: scale(1.5);
+    letter-spacing: 1px;
+    font-size: 68.5%;
+  }
+
+  figcaption::before,
+  p {
+    opacity: 0;
+    transition: opacity 0.35s, transform 0.35s;
+  }
+
+  &:hover {
+    img {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+
+    figcaption::before,
+    p {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &.highlighted {
+    grid-column: span 2;
+
+    h2 {
+      padding: 10% 0 20px 0;
+    }
+  }
+}

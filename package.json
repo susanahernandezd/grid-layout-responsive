@@ -1,0 +1,26 @@
+{
+  "name": "grid-layout-responsive",
+  "version": "1.0.0",
+  "description": "Grid layout without mediaqueries",
+  "scripts": {
+    "start": "parcel serve index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/susanahernandezd/grid-layout-responsive.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/susanahernandezd/grid-layout-responsive/issues"
+  },
+  "homepage": "https://github.com/susanahernandezd/grid-layout-responsive#readme",
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.8.8",
+    "postcss-nested": "^5.0.6",
+    "posthtml-include": "^1.7.2"
+  }
+}
